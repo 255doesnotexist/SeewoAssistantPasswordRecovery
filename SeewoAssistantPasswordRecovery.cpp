@@ -50,7 +50,6 @@ int main(){
 
     int try_count=0;
     char password[]="000000"; double T=clock();
-//    std::cout<<calcMD5FromString("665265")<<std::endl;
     for(char a='0';a<='9';++a){
         password[0]=a;
        for(char b='0';b<='9';++b){
@@ -63,9 +62,6 @@ int main(){
                         password[4]=e;
                         for(char f='0';f<='9';++f){
                             password[5]=f; password[6]='\0'; ++try_count;
-//                            if(strcmp(password,"665265")==0){
-//                            	printf(calcMD5FromString(password).c_str());
-//                            }
                             if(seewoSettings["ADMIN.PASSWORD"].find(calcMD5FromString(password))!=std::string::npos){
                             	printf("100%%...\n"); 
                                 printf("\n[INFO] Successfully found password is %s!",password); getchar();
